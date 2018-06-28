@@ -1,0 +1,48 @@
+{
+  "schedule" : [ {
+    "date" : "Wednesday 27-06-2018",
+    "engineers" : [ {
+      "id" : "1",
+      "name" : "utk 1"
+    }, {
+      "id" : "2",
+      "name" : "utk 2"
+    }, {
+      "id" : "3",
+      "name" : "utk 3"
+    }, {
+      "id" : "4",
+      "name" : "utk 4"
+    } ]
+  }, {
+    "date" : "Thursday 28-06-2018",
+    "engineers" : [ {
+      "id" : "5",
+      "name" : "utk 5"
+    }, null, null, null ]
+  }, {
+    "date" : "Sunday 01-07-2018",
+    "engineers" : [ null, null, null, null ]
+  }, {
+    "date" : "Monday 02-07-2018",
+    "engineers" : [ null, null, null, null ]
+  }, {
+    "date" : "Tuesday 03-07-2018",
+    "engineers" : [ null, null, null, null ]
+  }, {
+    "date" : "Wednesday 04-07-2018",
+    "engineers" : [ null, null, null, null ]
+  }, {
+    "date" : "Thursday 05-07-2018",
+    "engineers" : [ null, null, null, null ]
+  }, {
+    "date" : "Sunday 08-07-2018",
+    "engineers" : [ null, null, null, null ]
+  }, {
+    "date" : "Monday 09-07-2018",
+    "engineers" : [ null, null, null, null ]
+  }, {
+    "date" : "Tuesday 10-07-2018",
+    "engineers" : [ null, null, null, null ]
+  } ]
+}
