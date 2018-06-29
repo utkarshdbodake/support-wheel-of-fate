@@ -10,6 +10,6 @@ public class SupportWheelOfFateApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(SupportWheelOfFateApplication.class, args);
-		Schedule schedule = new ScheduleService().getSchedule("");
+//		Schedule schedule = new ScheduleService().getSchedule("");
 	}
 }
