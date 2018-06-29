@@ -104,17 +104,29 @@ public class ScheduleService {
         return schedule;
     }
 
+    private void updateScheduleSpanInDays(String scheduleSpanInDaysStr) {
+        try {
+            if (scheduleSpanInDaysStr != null && !scheduleSpanInDaysStr.equals("")) {
+                Constants.setScheduleSpanInDays(Integer.parseInt(scheduleSpanInDaysStr));
+            }
+        } catch (NumberFormatException e) {
+            logger.error(e.getMessage());
+        }
+    }
+
     /**
      * Calculates the working dates & then gets the schedule for the support,
      * it allocates the engineers based upon the predefined rules.
      *
      * @param startDateStr Start date of the schedule. Has format: dd-MM-yyyy
+     * @param scheduleSpanInDaysStr
      * @return
      */
-    public Schedule getSchedule(String startDateStr) {
+    public Schedule getSchedule(String startDateStr, String scheduleSpanInDaysStr) {
 
         try {
             Date startDate = Util.convertStringToDate(startDateStr);
+            updateScheduleSpanInDays(scheduleSpanInDaysStr);
             List<Date> workingDates = Util.getWorkingDates(startDate, Constants.SCHEDULE_SPAN_IN_DAYS);
             return constructSchedule(workingDates);
         }

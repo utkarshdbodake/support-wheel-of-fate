@@ -19,4 +19,8 @@ public class Constants {
 
     // Max hours of shift on consecutive days by an engineer
     public static int MAX_HOURS_OF_SHIFT_ON_CONSECUTIVE_DAYS = 12;
+
+    public static void setScheduleSpanInDays(int scheduleSpanInDays) {
+        SCHEDULE_SPAN_IN_DAYS = scheduleSpanInDays;
+    }
 }
