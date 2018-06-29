@@ -6,10 +6,11 @@ import com.zenpanda.entity.Schedule;
 import com.zenpanda.entity.SingleDaySchedule;
 
 import java.util.Collections;
-import java.util.List;
 import java.util.Map;
 
-// An engineer cannot have half day shifts on consecutive days.
+/**
+ * Checks for rule: An engineer cannot have half day shifts on consecutive days.
+ */
 public class ConsecutiveDayRule implements IRule {
 
     private int calculateHoursOfShift(SingleDaySchedule singleDaySchedule, Engineer engineer) {

@@ -1,11 +1,16 @@
 package com.zenpanda.scheduler;
 
+import com.zenpanda.dao.EngineerDao;
 import com.zenpanda.entity.Engineer;
 import com.zenpanda.exception.NoAvailableEngineersException;
 
 import java.util.Arrays;
 import java.util.List;
 
+/**
+ * Gets the engineers in sequential linear order.
+ * Helps to traverse all the engineers in Round-robin fashion.
+ */
 public class EngineerTracker {
 
     private static int index;
@@ -13,15 +18,14 @@ public class EngineerTracker {
 
     static {
         index = 0;
-        availableEngineers = Arrays.asList(
-                new Engineer("1", "utk 1"),
-                new Engineer("2", "utk 2"),
-                new Engineer("3", "utk 3"),
-                new Engineer("4", "utk 4"),
-                new Engineer("5", "utk 5")
-        );
+        availableEngineers = new EngineerDao().getEngineers();
     }
 
+    /**
+     * Gets the avaialble engineer. If no engineer is available, it throws out an NoAvailableEngineersException.
+     * @return
+     * @throws NoAvailableEngineersException
+     */
     public static Engineer getAvailableEngineer() throws NoAvailableEngineersException {
 
         if(index > availableEngineers.size() - 1) {
@@ -32,6 +36,9 @@ public class EngineerTracker {
         return engineer;
     }
 
+    /**
+     * Resets the traversal pointer back to the start.
+     */
     public static void resetIndex() {
         index = 0;
     }

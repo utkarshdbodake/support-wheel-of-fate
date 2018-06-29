@@ -1,11 +1,13 @@
 package com.zenpanda.dao;
 
 import com.zenpanda.entity.Engineer;
+import lombok.Getter;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Arrays;
 
+@Getter
 public class EngineerDao {
 
     private List<Engineer> engineers = new ArrayList<>(
@@ -19,15 +21,7 @@ public class EngineerDao {
                     new Engineer("7", "Utkarsh 7"),
                     new Engineer("8", "Utkarsh 8"),
                     new Engineer("9", "Utkarsh 9"),
-                    new Engineer("10", "Utkarsh 11"),
-                    new Engineer("10", "Utkarsh 12"),
-                    new Engineer("10", "Utkarsh 13"),
-                    new Engineer("10", "Utkarsh 14"),
-                    new Engineer("10", "Utkarsh 15")
+                    new Engineer("10", "Utkarsh 10")
             )
     );
-
-    List<Engineer> getEngineers() {
-        return engineers;
-    }
 }

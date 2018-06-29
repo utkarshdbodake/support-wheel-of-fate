@@ -8,12 +8,9 @@ import lombok.NoArgsConstructor;
 import java.util.Date;
 import java.util.List;
 
-@Data
-@NoArgsConstructor
-@AllArgsConstructor
-public class SingleDaySchedule {
-
-    /*
+/**
+ * SingleDaySchedule entity has below json format:
+ *
         {
             "date": 24-09-2018,
             "engineers": [
@@ -21,8 +18,13 @@ public class SingleDaySchedule {
                 { engineer 2 },
             ]
         }
-     */
-    @JsonFormat(pattern = "EEEE dd-MM-yyyy")
+ */
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+public class SingleDaySchedule {
+
+    @JsonFormat(pattern = "EEE dd-MM-yyyy")
     Date date;
     List<Engineer> engineers;
 }

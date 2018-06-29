@@ -6,11 +6,9 @@ import lombok.NoArgsConstructor;
 
 import java.util.List;
 
-@Data
-@NoArgsConstructor
-@AllArgsConstructor
-public class Schedule {
-    /*
+/**
+ * Schedule entity has below json format:
+ *
         {
             "schedule": [
                 {
@@ -23,6 +21,11 @@ public class Schedule {
                 { ... }
             ]
         }
-     */
+ */
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+public class Schedule {
+
     private List<SingleDaySchedule> schedule;
 }

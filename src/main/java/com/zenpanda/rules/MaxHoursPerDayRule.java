@@ -8,7 +8,9 @@ import com.zenpanda.entity.SingleDaySchedule;
 import java.util.Collections;
 import java.util.Map;
 
-// Enforces rule: An engineer can do at most one half day shift in a day.
+/**
+ * Checks for rule: An engineer can do at most one half day shift in a day.
+ */
 public class MaxHoursPerDayRule implements IRule {
 
     public boolean isValid(Engineer engineer,

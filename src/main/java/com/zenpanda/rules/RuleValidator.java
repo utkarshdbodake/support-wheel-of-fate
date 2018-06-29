@@ -15,7 +15,6 @@ import java.util.Map;
 public class RuleValidator {
 
     private static List<IRule> rules;
-
     static {
         rules = Arrays.asList(
                 new MaxHoursPerDayRule(),
@@ -26,6 +25,12 @@ public class RuleValidator {
 
     /**
      * Checks for all the rules and returns true if all the rules are valid.
+     *
+     * @param engineer
+     * @param noOfShiftsPerEngineerMap
+     * @param singleDaySchedule
+     * @param schedule
+     * @return
      */
     public static boolean areRulesValid(
             Engineer engineer,

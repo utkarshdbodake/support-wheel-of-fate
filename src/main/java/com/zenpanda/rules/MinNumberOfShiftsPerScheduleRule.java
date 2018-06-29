@@ -10,7 +10,9 @@ import org.apache.logging.log4j.Logger;
 
 import java.util.Map;
 
-// Enforces rule: Each engineer should have completed one whole day of support in any 2 week period.
+/**
+ * Checks for rule: Each engineer should have completed one whole day of support in any 2 week period.
+ */
 public class MinNumberOfShiftsPerScheduleRule implements IRule {
 
     private static final Logger logger = LogManager.getLogger(MinNumberOfShiftsPerScheduleRule.class);
