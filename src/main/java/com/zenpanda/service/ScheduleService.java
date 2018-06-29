@@ -93,9 +93,6 @@ public class ScheduleService {
      * @throws InvalidShiftDurationException
      */
     private Schedule constructSchedule(List<Date> workingDates) throws InvalidShiftDurationException {
-
-        System.out.println("********** Constants.SCHEDULE_SPAN_IN_DAYS: " + Constants.SCHEDULE_SPAN_IN_DAYS);
-        System.out.println("********** workingDates: " + workingDates);
         int shiftsPerDay = Util.shiftsPerDay();
         Schedule schedule = new Schedule(new ArrayList<>());
 
@@ -104,7 +101,6 @@ public class ScheduleService {
             schedule.getSchedule().add(singleDaySchedule);
         }
 
-        System.out.println("********** schedule: " + schedule);
         return schedule;
     }
 
