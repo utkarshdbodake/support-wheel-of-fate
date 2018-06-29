@@ -4,7 +4,6 @@ import com.zenpanda.dao.EngineerDao;
 import com.zenpanda.entity.Engineer;
 import com.zenpanda.exception.NoAvailableEngineersException;
 
-import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -22,7 +21,7 @@ public class EngineerTracker {
     }
 
     /**
-     * Gets the avaialble engineer. If no engineer is available, it throws out an NoAvailableEngineersException.
+     * Gets the available engineer. If no engineer is available, it throws out an NoAvailableEngineersException.
      * @return
      * @throws NoAvailableEngineersException
      */

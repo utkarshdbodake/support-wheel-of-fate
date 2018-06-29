@@ -108,7 +108,7 @@ public class ScheduleService {
      * Calculates the working dates & then gets the schedule for the support,
      * it allocates the engineers based upon the predefined rules.
      *
-     * @param startDateStr Start date of the schedule
+     * @param startDateStr Start date of the schedule. Has format: dd-MM-yyyy
      * @return
      */
     public Schedule getSchedule(String startDateStr) {
