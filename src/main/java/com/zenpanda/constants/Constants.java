@@ -6,7 +6,7 @@ import org.springframework.stereotype.Component;
 public class Constants {
 
     // No of days to provide the support
-    public static int SCHEDULE_SPAN_IN_DAYS = 5;
+    public static int SCHEDULE_SPAN_IN_DAYS = 10;
 
     // No of hours in a shift
     public static int SHIFT_DURATION_IN_HOURS = 12;

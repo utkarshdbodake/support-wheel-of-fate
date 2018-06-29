@@ -48,6 +48,8 @@ Check out android client app here: https://play.google.com/store/apps/details?id
         {
             "startDate": "25-8-2018"
         }
+
+        Note: For any invalid/missing inputs, we default to startDate to the current date.
     ```
 - Example using cURL request:
     ```
