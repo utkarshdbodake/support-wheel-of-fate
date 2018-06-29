@@ -3,6 +3,7 @@ package com.zenpanda.rules.fixtures;
 import com.zenpanda.entity.Engineer;
 import com.zenpanda.entity.Schedule;
 import com.zenpanda.entity.SingleDaySchedule;
+import com.zenpanda.util.Util;
 import lombok.Getter;
 import java.util.*;
 
@@ -25,21 +26,21 @@ public class ConsecutiveDayFixture2 {
         put(engineer4, 1);
     }};
     private static SingleDaySchedule singleDaySchedule1 = new SingleDaySchedule(
-            new Date(),
+            Util.convertDateToString(new Date()),
             Arrays.asList(
                     engineer1,
                     engineer2
             )
     );
     private static SingleDaySchedule singleDaySchedule2 = new SingleDaySchedule(
-            new Date(),
+            Util.convertDateToString(new Date()),
             Arrays.asList(
                     engineer3,
                     engineer4
             )
     );
     private static SingleDaySchedule singleDaySchedule3 = new SingleDaySchedule(
-            new Date(),
+            Util.convertDateToString(new Date()),
             Arrays.asList(
                     engineer4,
                     engineer5

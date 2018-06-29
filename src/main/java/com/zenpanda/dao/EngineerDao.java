@@ -2,14 +2,16 @@ package com.zenpanda.dao;
 
 import com.zenpanda.entity.Engineer;
 import lombok.Getter;
+import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Arrays;
 
-@Getter
+@Component
 public class EngineerDao {
 
+    @Getter
     private List<Engineer> engineers = new ArrayList<>(
             Arrays.asList(
                     new Engineer("1", "Utkarsh 1"),

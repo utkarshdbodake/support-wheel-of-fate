@@ -12,10 +12,10 @@ import java.util.List;
  */
 public class EngineerTracker {
 
-    private static int index;
-    private static List<Engineer> availableEngineers;
+    private int index = 0;
+    private List<Engineer> availableEngineers;
 
-    static {
+    public EngineerTracker() {
         index = 0;
         availableEngineers = new EngineerDao().getEngineers();
     }
@@ -25,7 +25,7 @@ public class EngineerTracker {
      * @return
      * @throws NoAvailableEngineersException
      */
-    public static Engineer getAvailableEngineer() throws NoAvailableEngineersException {
+    public Engineer getAvailableEngineer() throws NoAvailableEngineersException {
 
         if(index > availableEngineers.size() - 1) {
             throw new NoAvailableEngineersException();
@@ -38,7 +38,7 @@ public class EngineerTracker {
     /**
      * Resets the traversal pointer back to the start.
      */
-    public static void resetIndex() {
+    public void resetIndex() {
         index = 0;
     }
 }

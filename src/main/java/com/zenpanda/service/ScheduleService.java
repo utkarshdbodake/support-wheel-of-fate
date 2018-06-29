@@ -6,7 +6,6 @@ import com.zenpanda.entity.Schedule;
 import com.zenpanda.entity.SingleDaySchedule;
 import com.zenpanda.exception.InvalidShiftDurationException;
 import com.zenpanda.exception.NoAvailableEngineersException;
-import com.zenpanda.exception.ScheduleGenerationException;
 import com.zenpanda.rules.RuleValidator;
 import com.zenpanda.scheduler.EngineerTracker;
 import com.zenpanda.util.Util;
@@ -19,8 +18,13 @@ import java.util.*;
 @Service
 public class ScheduleService {
 
+    private EngineerTracker engineerTracker;
     private static final Logger logger = LogManager.getLogger(ScheduleService.class);
     private LinkedHashMap<Engineer, Integer> noOfShiftsPerEngineerMap = new LinkedHashMap<>();
+
+    public ScheduleService() {
+        engineerTracker = new EngineerTracker();
+    }
 
     /**
      * Tracks the counter of number of shifts done by the engineers.
@@ -50,20 +54,20 @@ public class ScheduleService {
     private SingleDaySchedule constructSingleDaySchedule(Date workingDate, int shiftsPerDay, Schedule schedule) {
 
         SingleDaySchedule singleDaySchedule = new SingleDaySchedule();
-        singleDaySchedule.setDate(workingDate);
+        singleDaySchedule.setDate(Util.convertDateToString(workingDate));
         List<Engineer> availableEngineers = new ArrayList<>();
         int noAvailableEngineersExceptionCounter = 0;
 
         for(int i = 0; i < shiftsPerDay;) {
             Engineer availableEngineer;
             try {
-                availableEngineer = EngineerTracker.getAvailableEngineer();
+                availableEngineer = engineerTracker.getAvailableEngineer();
             } catch (NoAvailableEngineersException e) {
                 logger.error("No available engineers found: " + e);
                 noAvailableEngineersExceptionCounter ++;
                 if (noAvailableEngineersExceptionCounter >= 2)
                     break;
-                EngineerTracker.resetIndex();
+                engineerTracker.resetIndex();
                 continue;
             }
 

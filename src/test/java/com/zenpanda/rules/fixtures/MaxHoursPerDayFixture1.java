@@ -3,6 +3,7 @@ package com.zenpanda.rules.fixtures;
 import com.zenpanda.entity.Engineer;
 import com.zenpanda.entity.Schedule;
 import com.zenpanda.entity.SingleDaySchedule;
+import com.zenpanda.util.Util;
 import lombok.Getter;
 import java.util.*;
 
@@ -14,7 +15,7 @@ public class MaxHoursPerDayFixture1 {
     private static Map<Engineer, Integer> noOfShiftsPerEngineerMap = null
             ;
     private static SingleDaySchedule singleDaySchedule1 = new SingleDaySchedule(
-            new Date(),
+            Util.convertDateToString(new Date()),
             Arrays.asList(
                     engineer1
             )

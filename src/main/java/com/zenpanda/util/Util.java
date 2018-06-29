@@ -42,6 +42,10 @@ public class Util {
         return new SimpleDateFormat("dd-MM-yyyy").parse(date);
     }
 
+    public static String convertDateToString(Date date) {
+        return new SimpleDateFormat("EEE dd-MM-yyyy").format(date);
+    }
+
     public static int shiftsPerDay() throws InvalidShiftDurationException {
         if(Constants.SHIFT_DURATION_IN_HOURS > 24)
             throw new InvalidShiftDurationException();
