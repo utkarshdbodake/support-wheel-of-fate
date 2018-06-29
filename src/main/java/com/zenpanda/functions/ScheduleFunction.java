@@ -12,7 +12,10 @@ public class ScheduleFunction implements Function<Map<String, String>, Schedule>
 
     @Override
     public Schedule apply(final Map<String, String> request) {
-        String startDate = request.get("startDate");
+        String startDate = "";
+        if (request != null && request.containsKey("startDate")) {
+            startDate = request.get("startDate");
+        }
         return new ScheduleService().getSchedule(startDate);
     }
 }

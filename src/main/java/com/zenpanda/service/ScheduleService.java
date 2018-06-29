@@ -7,7 +7,7 @@ import com.zenpanda.entity.SingleDaySchedule;
 import com.zenpanda.exception.InvalidShiftDurationException;
 import com.zenpanda.exception.NoAvailableEngineersException;
 import com.zenpanda.rules.RuleValidator;
-import com.zenpanda.scheduler.EngineerTracker;
+import com.zenpanda.tracker.EngineerTracker;
 import com.zenpanda.util.Util;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
