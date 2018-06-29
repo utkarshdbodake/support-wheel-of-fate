@@ -35,15 +35,16 @@ public class Util {
         return workingDates;
     }
 
-    public static Date convertStringToDate(String date) throws ParseException {
-        if (date == null || date.equals("")) {
+    public static Date convertStringToDate(String date) {
+        try {
+            return new SimpleDateFormat("dd-MM-yyyy").parse(date);
+        } catch (ParseException e) {
             return new Date();
         }
-        return new SimpleDateFormat("dd-MM-yyyy").parse(date);
     }
 
     public static String convertDateToString(Date date) {
-        return new SimpleDateFormat("EEE dd-MM-yyyy").format(date);
+        return new SimpleDateFormat("EEEE dd-MM-yyyy").format(date);
     }
 
     public static int shiftsPerDay() throws InvalidShiftDurationException {
