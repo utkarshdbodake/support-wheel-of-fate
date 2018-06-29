@@ -1,6 +1,8 @@
 # Support wheel of fate
+
 A web-server (with HTTP APIs) that manages assigning employees to a support schedule.
 Check out android client app here: https://play.google.com/store/apps/details?id=com.zenpanda.supportwheel
+
 -----
 # Entities
 ### Engineer Entity
